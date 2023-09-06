@@ -33,7 +33,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
-app.use(express.static('styles'));
+// app.use(express.static('styles'));
+// __dirname + '/public/'
+app.use(express.static(__dirname + '/styles/));
 
 app.use(methodOverride('_method'));
 
