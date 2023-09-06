@@ -19,11 +19,11 @@ app.set('view engine', 'ejs');
 console.log(
 process.env.MONGO_URL
 )
-const db = 'mongodb+srv://Anton:Pass321@cluster008.bij13ms.mongodb.net/node-blog?retryWrites=true&w=majority';
+// const db = 'mongodb+srv://Anton:Pass321@cluster008.bij13ms.mongodb.net/node-blog?retryWrites=true&w=majority';
 
 mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  // .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  // .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((res) => console.log(successMsg('Connected to DB')))
   .catch((error) => console.log(errorMsg(error)));
 
